@@ -1,0 +1,67 @@
+//Open for extension , closed for modification.
+
+package com.example.lld;
+
+public class InvoiceDao {
+    Invoice invoice;
+
+    public InvoiceDao(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public void saveToDB()
+    {
+        //save into DB
+    }
+}
+
+// Above code is already tested and live, its not good to modify it to add save to File fucntion.
+// It is prone to bugs.
+
+package com.example.lld;
+
+public class InvoiceDao {
+    Invoice invoice;
+
+    public InvoiceDao(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public void saveToDB()
+    {
+        //save into DB
+    }
+
+    public void saveToFile()
+    {
+        //save into File
+    }
+}
+
+
+//To solve this, Take an interface of Invoice Dao, and implements it for file , DB, or SQL or 
+//MongoDb type of saivng. This means if any new type of databse comes, we can just create a new class implementing InvoiceDao,
+//no need to change already implemented classes.
+
+
+package com.example.lld;
+
+interface InvoiceDao{
+    public void save(Invoice invoice);
+}
+class DatabaseInvoiceDao implements InvoiceDao{
+
+    public void save(Invoice invoice) {
+        //save to DB
+    }
+}
+
+class FileInvoiceDao implements InvoiceDao{
+
+    public void save(Invoice invoice) {
+        //save to file
+    }
+}
+
+
+

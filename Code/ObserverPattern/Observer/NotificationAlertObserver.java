@@ -1,0 +1,5 @@
+package com.example.ObserverPattern.Observer;
+
+public interface NotificationAlertObserver {
+    public void update();
+}

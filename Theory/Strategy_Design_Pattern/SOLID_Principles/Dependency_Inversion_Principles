@@ -1,0 +1,40 @@
+//Class should depend on interface, rather than concrete class.
+
+
+Keyboard interface
+-> Wired Keyboard
+-> Bluetooth Keyboard
+
+Mouse interface
+-> Wired Mouse
+-> Bluetooth Mouse
+
+
+package com.example.lld4;
+
+public class MacBook {
+    private final WiredKeyboard wiredKeyboard;
+    private final WiredMouse wiredMouse;
+
+    public MacBook(WiredKeyboard wiredKeyboard, WiredMouse wiredMouse) {
+        this.wiredKeyboard = wiredKeyboard;
+        this.wiredMouse = wiredMouse;
+    }
+}
+
+
+// Here, for MacBook class, we are assigning concrete class object. If Later, we have to enhance 
+// the Keyboard or the Mouse, we will not be ale to do that.
+
+
+public class MacBook {
+    private final KeyBoard keyBoard;
+    private final Mouse mouse;
+
+    public MacBook(KeyBoard keyBoard, Mouse mouse) {
+        this.keyBoard = keyBoard;
+        this.mouse = mouse;
+    }
+}
+
+
