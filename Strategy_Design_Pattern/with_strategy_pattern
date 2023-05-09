@@ -1,0 +1,96 @@
+package com.example.lld5.withStrategyPattern.Strategy;
+
+public interface DriveStrategy {
+    public void drive();
+}
+
+
+package com.example.lld5.withStrategyPattern.Strategy;
+
+public class NormalDriveStrategy implements DriveStrategy{
+    public void drive()
+    {
+        System.out.println("normal drive strategy");
+    }
+}
+
+
+package com.example.lld5.withStrategyPattern.Strategy;
+
+public class SportsDriveStrategy implements DriveStrategy{
+
+    public void drive() {
+        System.out.println("Sports drive capability");
+    }
+}
+
+package com.example.lld5.withStrategyPattern;
+
+import com.example.lld5.withStrategyPattern.Strategy.DriveStrategy;
+
+public class Vehicle {
+    DriveStrategy driveObject;
+
+    public Vehicle(DriveStrategy driveObject) {
+        this.driveObject = driveObject;
+    }
+
+    public void drive()
+    {
+        driveObject.drive();
+    }
+}
+
+
+
+package com.example.lld5.withStrategyPattern;
+
+import com.example.lld5.withStrategyPattern.Strategy.NormalDriveStrategy;
+
+public class GoodVehicle extends Vehicle{
+
+    public GoodVehicle() {
+        super(new NormalDriveStrategy());
+    }
+}
+
+package com.example.lld5.withStrategyPattern;
+
+import com.example.lld5.withStrategyPattern.Strategy.SportsDriveStrategy;
+
+public class SportVehicle extends Vehicle{
+
+    public SportVehicle() {
+        super(new SportsDriveStrategy());
+    }
+}
+
+
+package com.example.lld5.withStrategyPattern;
+
+import com.example.lld5.withStrategyPattern.Strategy.SportsDriveStrategy;
+
+public class OffRoadVehicle extends Vehicle{
+
+    OffRoadVehicle(){
+        super(new SportsDriveStrategy());
+    }
+
+}
+
+
+package com.example.lld5.withStrategyPattern;
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle = new GoodVehicle();
+        vehicle.drive();
+    }
+}
+
+
+// Here we have created an interface for the feature drive which was getting duplicated among subclasses. 
+// Then we defined its interface object in parent Vehicle class. We did contructor injection there, and did not 
+// hardwired. We left the instatiation of the drivestartegy object on subclasses. Subclasses of vehicle pass 
+// certain drive strategy by calling super contructor.
+
