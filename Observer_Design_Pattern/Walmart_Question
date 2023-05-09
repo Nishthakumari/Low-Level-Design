@@ -1,0 +1,94 @@
+<!-- In amazon website, whenever we have a product out of stock, there is a button notify me.
+When that product come in stock, we have to send email to all consumers who have clicked on notify me button.
+
+ -->
+
+
+<!-- There are two object
+
+1. Observable
+2. Observer
+
+Whenever the state of Observable changes from S1 to S2 or S2 to S3 , we notify all the observer.
+This is called observer pattern. -->
+
+
+Observable interface
+List<ObserverInterface> objList  //maintain lists of all observer
+add(ObservaberInterface obj)  //registration of observer
+remove(ObservaberInterface obj)   //remove observer
+notify()  //notify all observer here
+
+
+
+Observer interface
+update()
+
+
+
+There is one to many relationship between observable and observer. Because we are maintaing a list of observer in observable.
+
+Observable has - a - relatiionship with observer.
+
+Implement obervable concrete class.
+
+Observable concrete class - is a -relationship with observerable.
+
+Observale Concrete Class:
+
+int data
+
+add(Observer Interface obj)
+{
+    objList.add(obj)
+}
+
+remove(Observer Interface obj)
+{
+    ojList.remove(obj)
+}
+
+notify()
+{
+    for(Observer Interface obj: objList)
+    {
+            obj.update()
+    }
+}
+
+setdata(int t)
+{
+    data = t;
+    notify()
+}
+
+getData()
+{
+
+}
+
+
+Observer Concrte Class
+
+ObserverConcreteClass:
+ObservableInterface obj
+
+update()
+{
+    obj.getdata()
+}
+
+ObserverConcreteClass has - a - relationship with ObservaleInterface
+
+In some boooks, we pass Oserverconcrete class object as parameter in while calling update .
+and in update method, we do object is instance of and then condition.
+
+Incase we have multiple concreteClass Implementation of Observale, Then we need to do "instance of" many times.
+
+
+
+
+
+
+
+
