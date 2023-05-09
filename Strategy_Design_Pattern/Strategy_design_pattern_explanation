@@ -1,0 +1,53 @@
+
+Is-A is a relationship  ---> Inheritance
+
+Has-A is a relationship
+
+In normal inheritance, in some situation, our design are not scalable.
+
+Strategy design pattern helps us to scale that.
+
+
+
+Without Starategy pattern
+
+package com.example.lld5.withoutStrategyPattern;
+
+public class Vehicle {
+
+    System.out.println("normal drive capability");
+
+}
+
+
+package com.example.lld5.withoutStrategyPattern;
+
+public class SportVehicle extends Vehicle{
+    public void drive()
+    {
+        //different drive capability
+        System.out.println("sports drive capability");
+    }
+}
+
+package com.example.lld5.withoutStrategyPattern;
+
+public class PassengerVehicle extends Vehicle{
+
+}
+
+
+package com.example.lld5.withoutStrategyPattern;
+
+public class OffRoadVehicle extends Vehicle{
+    public void drive()
+    {
+        //different drive capability
+        System.out.println("sports drive capability");
+    }
+}
+
+here, when subclasses have same special drive capability, then code for special drive capability get repated in both subclasses. And if feature increases, more is the duplication.
+
+
+
