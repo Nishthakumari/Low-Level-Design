@@ -1,0 +1,57 @@
+<!-- interfaces should be such that client should not implement unnecessary function they do not need. -->
+
+package com.example.lld3;
+
+public interface ResturantEmployee {
+
+    void washDishes();
+    void serveCustomers();
+    void cookFood();
+
+}
+
+class Waiter implements ResturantEmployee{
+
+    public void washDishes() {
+        //not my job
+    }
+
+    public void serveCustomers() {
+        //yes and here is my implementation
+        System.out.println("serving the customer");
+    }
+
+    public void cookFood() {
+        //not my job
+    }
+}
+
+
+<!-- Here waiter has to implement unnecessary function. 
+
+Here we should break out interface into many little interface so that our client do not need to implement unnecessary functions. -->
+
+
+interface WaiterInterface{
+    void serveCustomers();
+    void takeOrders();
+}
+
+interface chefInterface{
+    void cookFood();
+    void decideMenu();
+
+}
+
+class Waiter implements WaiterInterface{
+
+    public void serveCustomers() {
+        System.out.println("Serving the customer");
+    }
+
+    public void takeOrders() {
+        System.out.println("taking the orders");
+    }
+}
+
+
