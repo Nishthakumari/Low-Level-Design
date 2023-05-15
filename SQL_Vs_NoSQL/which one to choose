@@ -1,0 +1,146 @@
+1. Structure
+2. Nature
+3. Property
+4. Scalability
+
+SQL is Structured Query Langugae which is used to query RDBMS(Relational Database management SYstem)
+
+RDBMS has table, rows, and column. And it has relations between multiple columns.
+
+RDBMS has strutred data and SQL is used to query/manage the data of table.
+
+Structure of MySQL
+1. Table, row, column
+2. Predefined Schema, before you start using it.
+3. Relations between different table
+
+Nature of MySQL
+1. Centralised/Concetrated - All table have to be in same server. All column of a tale need to be in same server.
+
+
+Scalability of SQL:
+1. Suppose there are millions of users, we are trying to scale up our database.
+Two ways:
+Vertical - Increase RAM/ Storage
+Horizontal - Sharding
+
+But sharding is not well supported in SQL.
+
+The way SQL scale is vertical
+
+
+
+Property of SQL:
+
+ACID property: (Data Integerity and Consistency)
+Atomicity
+Consistensy
+Isolation
+Durability
+
+
+NoSQL( NonRelational, NoSQL, Not Only SQL)
+
+Structure:
+
+NoSQL works on unstrutred data.
+
+1. Key-value DB
+2. Document DB
+3. Columnwise DB
+4. Graph DB
+
+1. Key-Value DB - example - DynamoDB
+
+Key    value
+
+Its value is opaque data. It means We cannot query/search based on Value. Value can be any datatype(String, int, json). But we can query on Key. Thats why it is very fast.
+
+
+2. Document DB - exmaple- MongoDB
+
+It also has key and value. Value can be xml or json.
+Difference - Here we can query based on key and value both.
+
+3. ColumnWise DB 
+
+Key ----> (Column, value) pairs
+
+10001 ---> (firstname : nishtha)
+            (lastname : kumari)
+            (dept : cse)
+
+(10002) ---> (firstname : Gita)
+            (lastname : kumari)
+
+4. Graph DB
+
+Social Networking
+Recomendation Engine
+
+Node( Data) and Edge Relationship
+
+In SQL also, we have relationship, but it does full scan .. but in GRaph DB, it directly goes inside, using edge.
+
+So, structure of SQL:
+key-value
+document
+Graph 
+Column-wise
+
+
+Nature:
+Distributed - data is stored in different node
+
+Scale 
+Horizonatlly - cn add many node as required
+
+Property:  BASE
+
+Ba - > Basically Available
+S - > Safe State
+E - > Eventual COnsistency
+
+Basically available means highly available -  replication makes it highly availble
+
+State of Data can be changed with interaction. Means update data when many server sinks.
+
+You might get stale data, but once they sink up, you will get uppdate data eventually.
+
+SQL VS NOSQL
+
+SQL supports flexible quesry.. NoSQl supports only BASIC quesry
+
+If you know which column will be  used for searching and or have basic quesry only, Then go for NOSQL.
+
+InSQL, If data is relational nature, too many dependecy.
+
+In noSQL, When data is not too tightly dependent on each other, then use NoSQL.
+
+
+If data integrity is required, means you cannot lose a single transaction, you cannot lose consistency. Then there is no way you can go to NoSQL, you have to go to SQL.
+
+ex: financila institution - must SQL.
+
+NoSQL is developer to handle large amount of data, big data - and they are dynamic and they are changing- losing some data is of no impact.
+
+InNOSQL, you can get stale data too, 
+
+High Availability - High Performance - with some inconsistency - NOSQL - distributed -> it can go to particula node and search data. Searching is very fast/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
