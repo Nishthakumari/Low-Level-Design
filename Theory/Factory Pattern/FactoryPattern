@@ -1,0 +1,29 @@
+Whenever we have to create Object, we use Factory Pattern.
+Based on some condition.
+
+if cond1, obj1
+if cond2, obj2
+
+If on conditional basis, we have to create objects, we use Factory pattern, 
+
+Suppose we have many class, having oject created based on different parameter in each class.
+
+Shape interface{
+
+    method draw()
+
+}
+
+Circle -> is a -> Shape
+Rectangle is a Shape
+Square is a Shape
+
+There is a shape factory which has a -> shape that creates required object based on usinees logic.
+
+When we have to create same object in many places, based on some condition, then there will be  a
+duplicacy. There we use Factory Pattern.
+
+
+
+
+
